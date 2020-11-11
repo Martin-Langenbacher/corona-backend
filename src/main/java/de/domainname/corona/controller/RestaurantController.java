@@ -20,15 +20,16 @@ public class RestaurantController {
 
 		List<Restaurant> restaurants = new ArrayList<Restaurant>() ;
 		
-		Restaurant restaurant = new Restaurant();
+		/*Restaurant restaurant = new Restaurant();
 		restaurant.setId(1);
 		restaurant.setName("Zum blauen Engel");
 		restaurant.setAddress("Engelstr. 13, 54111 Bonn");
 		restaurant.setQrCode("Lücke");
+		*/
 		
 		Restaurant restaurant2 = Restaurant.builder().id(2).address("Hofstr. 12").name("Hirsch").build();
 		
-		restaurants.add(restaurant );
+		//restaurants.add(restaurant );
 		restaurants.add(restaurant2);
 		//List<Restaurant> restaurants = Collections.emptyList();  // ist cool ;-)
 		//List<Restaurant> restaurants = Collections.singletonList(restaurant); 	

@@ -2,6 +2,7 @@ package de.domainname.corona;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RestController;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -14,8 +15,11 @@ public class SpringFoxConfig {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.any())              
-          .paths(PathSelectors.any())                          
+//          .apis(RequestHandlerSelectors.any())  
+          .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
+//          .paths(PathSelectors.ant("/api/**"))                          
           .build();                                           
     }
 }
+
+// https://stackoverflow.com/questions/32941917/remove-basic-error-controller-in-springfox-swaggerui
